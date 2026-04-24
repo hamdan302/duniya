@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Surprise For You 💝</title>
+    <!-- Elegant Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="gift.css">
+</head>
+
+<body>
+    <!-- Theme & Audio Controls -->
+    <div class="controls">
+        <button id="audioToggle" class="icon-btn" title="Play Music">🎵</button>
+        <!-- Background Music: Feel free to change the src to your own music file -->
+        <audio id="bgMusic" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-content fade-in">
+            <!-- Replace [HER_NAME] with your girlfriend's name -->
+            <h1 class="glow-text">[ALISHBA]</h1>
+            <div class="short-message">
+                <p>From the moment you walked into my life, everything changed.</p>
+                <p>You bring out the best in me, making every day feel like a dream.</p>
+                <p>I love you more than words could ever truly express.</p>
+                <p>You are my heart, my soul, and my forever.</p>
+            </div>
+            <button id="surpriseBtn" class="btn-elegant">Click for Surprise ✨</button>
+        </div>
+        <!-- Scroll Down Indicator -->
+        <a href="#memories" class="scroll-down">↓</a>
+    </section>
+
+    <!-- Memories Section -->
+    <section class="memories-section" id="memories">
+        <h2 class="section-title fade-in">Our Beautiful Memories</h2>
+        <div class="gallery fade-in">
+            <!-- You can replace the img-placeholder divs with actual <img> tags later -->
+            <div class="gallery-item">
+                <div class="img-placeholder">📸 Image 1</div>
+                <div class="caption">Our First Date</div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-placeholder">📸 Image 2</div>
+                <div class="caption">That Beautiful Vacation</div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-placeholder">📸 Image 3</div>
+                <div class="caption">Just Us Being Silly</div>
+            </div>
+            <div class="gallery-item">
+                <div class="img-placeholder">📸 Image 4</div>
+                <div class="caption">The Best Day Ever</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Time Together Section -->
+    <section class="time-section" id="time">
+        <h2 class="section-title fade-in">Time Since We Fell In Love</h2>
+        <div class="counter fade-in" id="counter">
+            <div class="time-box"><span id="days">0</span><span class="label">Days</span></div>
+            <div class="time-box"><span id="hours">0</span><span class="label">Hours</span></div>
+            <div class="time-box"><span id="minutes">0</span><span class="label">Minutes</span></div>
+            <div class="time-box"><span id="seconds">0</span><span class="label">Seconds</span></div>
+        </div>
+
+        <!-- Link back to the original index.html/duniya page -->
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="index.html" class="btn-elegant outline">Back to Home</a>
+        </div>
+    </section>
+
+    <!-- Surprise Modal -->
+    <div class="modal-overlay" id="surpriseModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <h2 class="modal-title">My Dearest [ALISHBA],</h2>
+            <div class="long-message">
+                <!-- Replace this text with your own personal message -->
+                <p>Everything starts and ends with you. My heart beats for you, my life revolves around you, and my
+                    future belongs to you. You are not just a part of my life; you are my entire world. I love you more
+                    than words can say. ❤️</p>
+                <p>Every single day I spend with you is a gift I never knew I needed.</p>
+                <p>Your smile lights up my darkest days, and your laugh is my favorite sound.</p>
+                <p>I promise to always hold your hand, to support your dreams, and to love you unconditionally.</p>
+                <p>We've built something so incredibly beautiful, and I can't wait to see what our future holds.</p>
+                <p>Thank you for choosing me. I love you, now and always.</p>
+            </div>
+        </div>
+        <!-- This container is for the floating hearts triggered by JS -->
+        <div id="heartsContainer"></div>
+    </div>
+
+    <!-- Include the specific JavaScript file for this page -->
+    <script src="gift.js"></script>
+</body>
+
+</html>

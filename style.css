@@ -1,0 +1,280 @@
+
+/* Romantic glowing effect for Surprise button */
+#surpriseBtn {
+    box-shadow: 0 0 24px 8px #ffb3c6, 0 0 48px 16px #ff4d6d44;
+    animation: romanticGlow 2.5s ease-in-out infinite alternate;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes romanticGlow {
+    0% { box-shadow: 0 0 24px 8px #ffb3c6, 0 0 48px 16px #ff4d6d44; }
+    100% { box-shadow: 0 0 36px 16px #ff4d6d, 0 0 64px 24px #ffb3c6; }
+}
+
+/* Add a soft floating animation to the button */
+#surpriseBtn {
+    animation-name: romanticGlow, floatBtn;
+    animation-duration: 2.5s, 3.5s;
+    animation-iteration-count: infinite, infinite;
+    animation-direction: alternate, alternate;
+}
+@keyframes floatBtn {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Responsive button size */
+@media (max-width: 600px) {
+    #surpriseBtn {
+        padding: 10px 18px !important;
+        font-size: 1rem !important;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #ff4d6d;
+    --primary-light: #ff758c;
+    --primary-dark: #c9184a;
+    --bg-gradient-1: #ff9a9e;
+    --bg-gradient-2: #fecfef;
+    --text-color: #590d22;
+    --card-bg: rgba(255, 255, 255, 0.25);
+    --card-border: rgba(255, 255, 255, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg-gradient-1) 0%, var(--bg-gradient-2) 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: var(--text-color);
+    position: relative;
+    padding: 2rem 0;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.floating-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255, 77, 109, 0.5);
+    font-size: 20px;
+    animation: floatUp 10s linear infinite;
+    bottom: -10vh;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.5) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes burst {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+}
+
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 3rem 2rem;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(255, 77, 109, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+    color: white;
+    border: none;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 77, 109, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 77, 109, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(1px);
+}
+
+.message-section, .duniya-section {
+    margin-top: 0;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(20px);
+}
+
+.message-section.reveal, .duniya-section.reveal {
+    opacity: 1;
+    max-height: 2000px;
+    transform: translateY(0);
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.3);
+}
+
+#loveText, .duniya-text {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.8;
+}
+
+.traits-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 1.5rem;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.trait {
+    font-size: 1rem;
+    color: var(--text-color);
+    padding-bottom: 5px;
+    border-bottom: 1px dashed rgba(255, 77, 109, 0.3);
+}
+
+.trait strong {
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+/* Home Page Beautification */
+.pulse-btn {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 77, 109, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0); }
+}
+
+.title-gradient {
+    background: linear-gradient(to right, var(--primary-dark), #ff0055, var(--primary-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    background-size: 200% auto;
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+}
+
+.hero-heart {
+    font-size: 5rem;
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 15px rgba(255, 77, 109, 0.6));
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+}
